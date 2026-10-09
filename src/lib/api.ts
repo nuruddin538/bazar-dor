@@ -13,6 +13,8 @@ async function fetchAPI<T>(endpoint: string): Promise<T> {
         revalidate: 60,
       },
     });
+    console.log("API URL:", `${BASE_URL}${endpoint}`);
+    console.log("API Status:", response.status);
     if (!response.ok) {
       throw new Error(`Primary API Error: ${response.status}`);
     }
@@ -24,6 +26,8 @@ async function fetchAPI<T>(endpoint: string): Promise<T> {
         revalidate: 60,
       },
     });
+    console.log("Fallback URL:", `${FALLBACK_BASE_URL}${endpoint}`);
+    console.log("Fallback Status:", response.status);
     if (!response.ok) {
       throw new Error(`Fallback API Error: ${response.status}`);
     }
@@ -45,8 +49,14 @@ export async function getProductsByCategory(
 }
 
 // Single Product
-export async function getProduct(id: string): Promise<Product> {
-  return fetchAPI<Product>(`/products/${id}`);
+export async function getProduct(slug: string): Promise<Product | undefined> {
+  if (!slug || slug === "undefined") {
+    return undefined;
+  }
+  const products = await getProducts();
+  return products.find(
+    (product) => product.slug === slug || String(product.id) === slug
+  );
 }
 
 // All Categories

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TiShoppingCart } from "react-icons/ti";
 import CategoryNav from "./CategoryNav";
 import DateDisplay from "./DateDisplay";
+import { Suspense } from "react";
 
 export default async function Navbar() {
   const categories = await getCategories();
@@ -41,7 +42,13 @@ export default async function Navbar() {
           </div>
         </div>
         {/* CATEGORY NAVIGATION */}
-        <CategoryNav categories={categories} />
+        <Suspense
+          fallback={
+            <div className="h-10 animate-pulse border-t border-[#edf1ed]" />
+          }
+        >
+          <CategoryNav categories={categories} />
+        </Suspense>
       </div>
     </header>
   );
