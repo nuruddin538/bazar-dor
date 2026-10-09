@@ -1,9 +1,11 @@
-import PriceMarquee from "@/components/PriceMarquee";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
     <div>
-      <PriceMarquee />
+      <div className="mt-6">
+        <Hero />
+      </div>
     </div>
   );
 }

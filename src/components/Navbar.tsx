@@ -7,7 +7,7 @@ import DateDisplay from "./DateDisplay";
 export default async function Navbar() {
   const categories = await getCategories();
   return (
-    <header className="border-b sticky border-[#dfe7df] bg-[#f8faf8]">
+    <header className="sticky top-0 z-50 border-b border-[#dfe7df] bg-[#f8faf8]">
       {/* Top Navbar */}
       <div className="mx-auto max-w-[1240px] container px-4">
         <div className="flex min-h-[70px] items-center justify-between">
