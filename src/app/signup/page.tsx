@@ -1,6 +1,6 @@
 "use client";
 
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { authClient } from "../lib/auth-client";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
@@ -39,7 +39,7 @@ export default function SignUpPage() {
       }
       if (data) {
         toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!");
-        router.push("/");
+        router.push("/signin");
       } else {
         toast.error("অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।");
       }
@@ -87,7 +87,9 @@ export default function SignUpPage() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700"></label>
+              <label className="block text-sm font-medium text-gray-700">
+                পাসওয়ার্ড
+              </label>
               <input
                 type="password"
                 name="password"
@@ -101,7 +103,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-green-400"
+              className="group cursor-pointer relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-green-400"
             >
               {isLoading ? (
                 <Loader2 className="animate-spin h-5 w-5" />
@@ -130,7 +132,7 @@ export default function SignUpPage() {
             </button>
             <button
               onClick={() => handleSocialLogin("github")}
-              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              className="w-full inline-flex cursor-pointer justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
             >
               <span className="sr-only">Sign in with Github</span>
               GitHub দিয়ে চালিয়ে যান
@@ -142,7 +144,7 @@ export default function SignUpPage() {
             অ্যাকাউন্ট আছে?{" "}
             <Link
               href="/signin"
-              className="font-medium text-green-600 hover:text-green-500"
+              className="font-medium cursor-pointer text-green-600 hover:text-green-500"
             >
               সাইন ইন করুন
             </Link>

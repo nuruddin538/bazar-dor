@@ -2,7 +2,7 @@ import "server-only";
 
 import { Category, Product } from "@/types/product";
 
-const BASE_URL = "https://api.api-store.workers.dev/api/bazardor";
+const BASE_URL = "https://openapi.programming-hero.com/api/bazardor";
 const FALLBACK_BASE_URL = "https://api.abcz.workers.dev/api/bazardor";
 
 async function fetchAPI<T>(endpoint: string): Promise<T> {
