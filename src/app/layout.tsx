@@ -6,6 +6,7 @@ import PriceMarquee from "@/components/PriceMarquee";
 import { Suspense } from "react";
 import GlobalSuspense from "@/components/GlobalSuspense";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar></Navbar>
           <PriceMarquee />
           <main className="container mx-auto">{children}</main>
+          <Footer />
         </GlobalSuspense>
       </body>
     </html>
