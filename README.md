@@ -6,7 +6,7 @@ BazarDor is a modern web application that helps users explore daily market price
 
 ## 🌐 Live Demo
 
-🔗 [Live Site](https://dev-stack-dc2uoo5os-md-nur-uddins-projects.vercel.app/)
+🔗 [Live Site](https://bazar-dor-ochre-alpha.vercel.app/)
 
 ## 📂 Github Repository
 
