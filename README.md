@@ -1,8 +1,169 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React + Nextjs + Better Auth
 
-## Getting Started
+# 🛒 বাজার দর | BazarDor
 
-First, run the development server:
+BazarDor is a modern web application that helps users explore daily market prices, track price changes, and make informed shopping decisions with ease.
+
+## 🌐 Live Demo
+
+🔗 [Live Site](https://dev-stack-dc2uoo5os-md-nur-uddins-projects.vercel.app/)
+
+## 📂 Github Repository
+
+🔗[Github Repository](https://github.com/nuruddin538/bazar-dor.git)
+
+<!-- Add your project screenshot here -->
+
+## ![DevStack Preview](./src/assets/preview.png)
+
+## 📌 About The Project
+
+**বাজার দর (BazarDor)** is a web-based market price tracking platform designed to make everyday shopping more transparent and convenient.
+
+Users can explore essential products, compare available market prices, identify products with increasing or decreasing prices, and access detailed product information through a clean and responsive interface.
+
+The project also provides user authentication and profile management for a personalized experience.
+
+## ✨ Key Features
+
+### 1. 📊 Daily Market Price Tracking
+
+- Explore essential products and their available market prices.
+- View product information in an organized layout.
+- Make informed shopping decisions.
+
+### 2. 📈 Price Increase & Decrease
+
+- Discover products whose prices have increased.
+- Explore products whose prices have decreased.
+- Quickly identify daily price movements.
+
+### 3. 🛍️ Product Details
+
+- View detailed information about individual products.
+- Explore market-wise price information.
+- Check available price changes for products.
+
+### 4. 🔐 Secure User Authentication
+
+- User registration and login with Better Auth.
+- Protect restricted pages from unauthenticated access.
+- Provide authenticated access to user-specific features.
+
+### 5. 👤 User Profile Management
+
+- View personal profile information.
+- Update account information.
+- Manage user details through a dedicated profile interface.
+
+## 🛠️ Technologies Used
+
+| Technology                         | Purpose                                         |
+| ---------------------------------- | ----------------------------------------------- |
+| **Next.js**                        | Building the user interface and web application |
+| **Next.js App Router**             | Page routing and navigation                     |
+| **TypeScript**                     | Type safety and maintainable code               |
+| **Tailwind CSS**                   | Responsive styling and modern layouts           |
+| **DaisyUI / UI Component Library** | Reusable UI components and consistent design    |
+| **Better Auth**                    | User authentication and session management      |
+
+## 🚀 Getting Started
+
+Follow these steps to run BazarDor on your local machine.
+
+### Prerequisites
+
+Make sure you have installed:
+
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- Git
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone <https://github.com/nuruddin538/bazar-dor.git>
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd bazar-dor
+```
+
+**3. Install dependencies**
+
+````bash
+npm install
+```
+**4. Configure environment variables**
+
+Create a `.env` file in the root directory and add the environment variables required by your application and Better Auth configuration.
+
+```env
+BETTER_AUTH_SECRET=your-secret-key
+BETTER_AUTH_URL=http://localhost:3000
+```
+
+> **Note:** Configure any additional database or authentication variables required by your project. Use the variable names specified in your actual application configuration, and never commit real secrets to GitHub.
+
+**5. Start the development server**
+
+```bash
+npm run dev
+```
+
+**6. Open the application**
+
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+
+## 📂 Project Structure
+
+A simplified overview of the project structure:
+
+```text
+bazar-dor/
+├── public/                 # Static assets
+├── src/
+│   ├── app/                # App Router pages and layouts
+│   ├── components/         # Reusable UI components
+│   ├── lib/                # Utility functions and API helpers
+│   └── types/              # TypeScript interfaces and types
+├── .env                    # Environment variables (not committed)
+├── package.json            # Dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+└── README.md               # Project documentation
+```
+> The structure above is illustrative. Adjust it to match your actual project folders.
+
+## 🎯 Project Goals
+
+- Make market price information easier to access.
+- Improve transparency around everyday product prices.
+- Help users understand price increases and decreases.
+- Deliver a responsive and user-friendly experience.
+- Practice modern web development with Next.js and TypeScript.
+
+## 🔮 Future Improvements
+
+- Historical price charts and trends.
+- Market and location-based price comparisons.
+- Product search and category filters.
+- Price alerts and notifications.
+- Additional market data and reporting.
+
+## 🤝 Contributing
+
+Contributions, suggestions, and feedback are welcome!
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Commit and push your changes.
+5. Open a pull request.
 
 ```bash
 npm run dev
@@ -12,7 +173,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
