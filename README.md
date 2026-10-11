@@ -14,7 +14,7 @@ BazarDor is a modern web application that helps users explore daily market price
 
 <!-- Add your project screenshot here -->
 
-## ![DevStack Preview](./src/assets/preview.png)
+## ![DevStack Preview](./src/assets/bazar-dor.png)
 
 ## 📌 About The Project
 
