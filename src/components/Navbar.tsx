@@ -4,6 +4,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import CategoryNav from "./CategoryNav";
 import DateDisplay from "./DateDisplay";
 import { Suspense } from "react";
+import NavbarAuth from "./NavbarAuth";
 
 export default async function Navbar() {
   const categories = await getCategories();
@@ -26,7 +27,7 @@ export default async function Navbar() {
             </div>
           </Link>
           {/* AUTH */}
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Link
               href="/signin"
               className="rounded-md px-3 py-2 text-[11px] font-bold text-[#222] transition hover:bg-[#e9eee9] sm:text-xs"
@@ -39,7 +40,8 @@ export default async function Navbar() {
             >
               সাইন আপ
             </Link>
-          </div>
+          </div> */}
+          <NavbarAuth />
         </div>
         {/* CATEGORY NAVIGATION */}
         <Suspense

@@ -10,6 +10,9 @@ import toast from "react-hot-toast";
 export default function SignUpPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [socialLoading, setSocialLoading] = useState<
+    "google" | "github" | null
+  >(null);
   const onSubmit = async (e: React.SubmitEvent<HTMLElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -31,7 +34,7 @@ export default function SignUpPage() {
     try {
       const { data, error } = await authClient.signUp.email({
         ...user,
-        callbackURL: "/",
+        callbackURL: "/?auth=success",
       });
       if (error) {
         toast.error(error.message || "অ্যাকাউন্ট তৈরি করা যায়নি।");
@@ -47,6 +50,22 @@ export default function SignUpPage() {
       toast.error("সমস্যা হয়েছে। আবার চেষ্টা করুন।");
     } finally {
       setIsLoading(false);
+    }
+  };
+  const handleSocialLogin = async (provider: "google" | "github") => {
+    setSocialLoading(provider);
+    try {
+      const { error } = await authClient.signIn.social({
+        provider,
+        callbackURL: "/",
+      });
+      if (error) {
+        toast.error(error.message || "সোশ্যাল লগইন করা যায়নি।");
+        setSocialLoading(null);
+      }
+    } catch (error) {
+      toast.error("সোশ্যাল লগইনে সমস্যা হয়েছে।");
+      setSocialLoading(null);
     }
   };
   return (
@@ -125,7 +144,7 @@ export default function SignUpPage() {
           <div className="mt-6 grid grid-cols-2 gap-3">
             <button
               onClick={() => handleSocialLogin("google")}
-              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              className="w-full cursor-pointer inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
             >
               <span className="sr-only">Sign in with Google</span>
               Google দিয়ে চালিয়ে যান
